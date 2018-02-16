@@ -1,0 +1,68 @@
+# This YAML file describes your package. Stack will automatically generate a
+# Cabal file when you run `stack build`. See the hpack website for help with
+# this file: <https://github.com/sol/hpack>.
+name: arduinoHS
+version: '0.0.0'
+github: "berewt/arduinoHS"
+license: MIT
+author: "Nicolas Biri"
+maintainer: "Nicolas Biri"
+# synopsis: A new Haskeleton package.
+# description: arduinoHS is a new Haskeleton package.
+# category: Other
+
+extra-source-files:
+- CHANGELOG.md
+- LICENSE.md
+- package.yaml
+- README.md
+- stack.yaml
+
+ghc-options: -Wall -pgmL markdown-unlit
+
+
+library:
+  dependencies:
+  - base
+  - text
+  - markdown-unlit
+  source-dirs: library
+
+executables:
+  arduinoHS:
+    source-dirs: executable
+    main: Main.hs
+    dependencies:
+    - base
+    - arduinoHS
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+
+benchmarks:
+  arduinoHS-benchmarks:
+    source-dirs: benchmark
+    main: Main.hs
+    dependencies:
+    - base
+    - arduinoHS
+    - criterion
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+
+tests:
+  arduinoHS-test-suite:
+    source-dirs: test-suite
+    main: Main.hs
+    dependencies:
+    - base
+    - arduinoHS
+    - tasty
+    - tasty-hspec
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
