@@ -86,6 +86,6 @@ in the next version.
 Let's move on to the [typed model][].
 
 
-[arduinoHS]: https://github.com/berewt/arduinoHS
+[arduinoHS]: ../../../README.md
 [minimalModel]: Model.md
 [typed model]: ../Typed/Model.md
