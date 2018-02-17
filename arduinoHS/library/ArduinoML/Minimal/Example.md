@@ -3,8 +3,9 @@
 <!--
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
-module ArduinoML.Minimal.Example
+module ArduinoML.Minimal.Example where
 
+import ArduinoML.Minimal.Model
 ```
 -->
 
@@ -31,10 +32,10 @@ The code is quite straightforward:
 
 ```haskell
 light :: Actuator
-light = Actuator "light" 12
+light = Actuator (BrickLegacy "light" 12)
 
 button :: Sensor
-button = Sensor "button" 9
+button = Sensor (BrickLegacy "button" 9)
 ```
 
 And we can use lazyness to define the state, despite their cyclic dependency.
@@ -51,7 +52,7 @@ And then we can just put everything into an 'App':
 
 ```haskell
 app :: App
-app = App "Switch" offline [online, offline] [BrickSensor button, BrickActuator light]
+app = App "Switch" offline [online, offline] [SensorAsBrick button, ActuatorAsBrick light]
 ```
 
 ## Discussion
@@ -71,7 +72,7 @@ version of app:
 
 ```haskell
 app' :: App
-app' = App "Switch" offline [offline] [BrickActuator light]
+app' = App "Switch" offline [offline] [ActuatorAsBrick light]
 ```
 
 The offline state is missing, there is no button in the state list, but it's

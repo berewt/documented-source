@@ -234,7 +234,9 @@ instance Bifoldable Brick where
 ## Next
 
 An example, a discussion about the problem of this solution and potential solutions
-to adress other issues of this data model. Just give me time to comment and commit.
+to adress other issues of this data model.
+All these awesome things in the [typed example][]
 
 [arduinoHS]: ../../../README.md
 [minimalexample]: ../Minimal/Example.md
+[typed example]: Example.md
