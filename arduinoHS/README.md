@@ -33,6 +33,9 @@ Then, you can browse and test the following file, preferencially in this order:
    of the limitations of this model.
 3. [`library/ArduinoML/Typed/Model.md`][typedModel] an alternative data model
    with more type safety.
+4. [`library/ArduinoML/Typed/Example.md`][typedExample] the same example
+   than the one defined in step 2, with the typed model, we also discussed
+   the drawbacks of stricter types.
 
 
 
@@ -43,3 +46,4 @@ Then, you can browse and test the following file, preferencially in this order:
 [minimalModel]: library/ArduinoML/Minimal/Model.md
 [minimalExample]: library/ArduinoML/Minimal/Example.md
 [typedModel]: library/ArduinoML/Minimal/Model.md
+[typedExample]: library/ArduinoML/Minimal/Example.md
